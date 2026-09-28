@@ -76,18 +76,15 @@ public class ATM_Transaction_System {
                             double withdraw = sc.nextDouble();
 
                             if (withdraw <= 0) {
-                                throw new InvalidAmountException(
-                                    "Transaction amount must be greater than zero.");
+                                throw new InvalidAmountException("Transaction amount must be greater than zero.");
                             }
 
                             if (withdraw > balance) {
-                                throw new InsufficientBalanceException(
-                                    "Insufficient balance!");
+                                throw new InsufficientBalanceException("Insufficient balance!");
                             }
 
                             if (dailyWithdrawal + withdraw > withdrawalLimit) {
-                                throw new WithdrawalLimitException(
-                                    "Daily withdrawal limit exceeded!");
+                                throw new WithdrawalLimitException("Daily withdrawal limit exceeded!");
                             }
 
                             balance = balance - withdraw;
